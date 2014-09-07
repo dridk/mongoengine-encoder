@@ -72,7 +72,7 @@ class MongoEncoder(object):
         elif isinstance(obj_to_mongo, ObjectId):
             return u"%s"%str(obj_to_mongo)
         elif isinstance(obj_to_mongo, list):
-            tmp_list_ret = []
+            tmp_list_ret = list(obj_to_mongo)
             for position,tmp in enumerate(obj_to_mongo):
                 #pp(new_obj)
                 if isinstance(tmp, dict):
